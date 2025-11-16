@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Environment files
+.env
+
+# Audio files
+*.wav
+*.mp3

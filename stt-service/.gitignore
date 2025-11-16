@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env
+.venv
+
+# Data files
+*.csv
+*.tsv
+*.log
+*.db
+
+# Jupyter notebooks
+*.ipynb_checkpoints/
+*.ipynb
+
+# System folders (Windows)
+Application Data/
+Cookies/
+Documents/
+Downloads/
+Favorites/
+My Documents/
+Music/
+Pictures/
+Videos/
+Saved Games/
+AppData/
+NTUSER.*
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Ignore other project folders
+bajaj_hack/
+student_pred/
+flasklearn/
+Leetcode/

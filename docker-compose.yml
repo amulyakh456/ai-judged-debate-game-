@@ -1,0 +1,32 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # --- Your Backend Orchestrator ---
+  backend-orchestrator:
+    build:
+      context: ./backend-orchestrator
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      # This is the key: It tells your code where to find the STT service.
+      # 'stt-service' is the name of the *other service* in this file.
+      - STT_SERVICE_WS_URL=ws://stt-service:8000/ws/transcribe
+    depends_on:
+      - stt-service
+    volumes:
+      - ./backend-orchestrator/app:/code/app
+    restart: always
+
+  # --- Your Teammate's STT Service ---
+  stt-service:
+    build:
+      context: ./stt-service
+      dockerfile: Dockerfile
+    ports:
+      # You can expose 8000 if you want to test it directly from your browser
+      - "8000:8000"
+    volumes:
+      - ./stt-service:/code
+    restart: always
